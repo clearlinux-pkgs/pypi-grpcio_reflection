@@ -4,7 +4,7 @@
 #
 Name     : pypi-grpcio_reflection
 Version  : 1.48.0
-Release  : 27
+Release  : 28
 URL      : https://files.pythonhosted.org/packages/d8/c7/e25a1573293f9f390eacb0a61f4f4fed8e2226faef2ebb3fe6a8dad0ab98/grpcio-reflection-1.48.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d8/c7/e25a1573293f9f390eacb0a61f4f4fed8e2226faef2ebb3fe6a8dad0ab98/grpcio-reflection-1.48.0.tar.gz
 Summary  : Standard Protobuf Reflection Service for gRPC
