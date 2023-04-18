@@ -4,10 +4,10 @@
 # Using build pattern: distutils3
 #
 Name     : pypi-grpcio_reflection
-Version  : 1.53.0
-Release  : 40
-URL      : https://files.pythonhosted.org/packages/a4/d3/873a3e3f8ef9855786a1e7cc05688869bbc391e2ac7ffb500160b2df78fa/grpcio-reflection-1.53.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/a4/d3/873a3e3f8ef9855786a1e7cc05688869bbc391e2ac7ffb500160b2df78fa/grpcio-reflection-1.53.0.tar.gz
+Version  : 1.54.0
+Release  : 41
+URL      : https://files.pythonhosted.org/packages/fd/8b/9814baa8c9aa579586918ec4114ba512c1f4e4cc3a23e13f6e60ab86ead1/grpcio-reflection-1.54.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/fd/8b/9814baa8c9aa579586918ec4114ba512c1f4e4cc3a23e13f6e60ab86ead1/grpcio-reflection-1.54.0.tar.gz
 Summary  : Standard Protobuf Reflection Service for gRPC
 Group    : Development/Tools
 License  : Apache-2.0
@@ -56,10 +56,10 @@ python3 components for the pypi-grpcio_reflection package.
 
 
 %prep
-%setup -q -n grpcio-reflection-1.53.0
-cd %{_builddir}/grpcio-reflection-1.53.0
+%setup -q -n grpcio-reflection-1.54.0
+cd %{_builddir}/grpcio-reflection-1.54.0
 pushd ..
-cp -a grpcio-reflection-1.53.0 buildavx2
+cp -a grpcio-reflection-1.54.0 buildavx2
 popd
 
 %build
@@ -67,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679955613
+export SOURCE_DATE_EPOCH=1681832123
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
