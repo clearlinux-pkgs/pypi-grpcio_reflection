@@ -4,10 +4,10 @@
 # Using build pattern: distutils3
 #
 Name     : pypi-grpcio_reflection
-Version  : 1.54.0
-Release  : 41
-URL      : https://files.pythonhosted.org/packages/fd/8b/9814baa8c9aa579586918ec4114ba512c1f4e4cc3a23e13f6e60ab86ead1/grpcio-reflection-1.54.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/fd/8b/9814baa8c9aa579586918ec4114ba512c1f4e4cc3a23e13f6e60ab86ead1/grpcio-reflection-1.54.0.tar.gz
+Version  : 1.54.2
+Release  : 42
+URL      : https://files.pythonhosted.org/packages/09/2e/58b5f777eede1e21624c79e0575c95f634d84278fbbf7a3fdc0a76b9ce78/grpcio-reflection-1.54.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/09/2e/58b5f777eede1e21624c79e0575c95f634d84278fbbf7a3fdc0a76b9ce78/grpcio-reflection-1.54.2.tar.gz
 Summary  : Standard Protobuf Reflection Service for gRPC
 Group    : Development/Tools
 License  : Apache-2.0
@@ -15,8 +15,6 @@ Requires: pypi-grpcio_reflection-license = %{version}-%{release}
 Requires: pypi-grpcio_reflection-python = %{version}-%{release}
 Requires: pypi-grpcio_reflection-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(grpcio)
-BuildRequires : pypi(protobuf)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -56,10 +54,10 @@ python3 components for the pypi-grpcio_reflection package.
 
 
 %prep
-%setup -q -n grpcio-reflection-1.54.0
-cd %{_builddir}/grpcio-reflection-1.54.0
+%setup -q -n grpcio-reflection-1.54.2
+cd %{_builddir}/grpcio-reflection-1.54.2
 pushd ..
-cp -a grpcio-reflection-1.54.0 buildavx2
+cp -a grpcio-reflection-1.54.2 buildavx2
 popd
 
 %build
@@ -67,15 +65,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681832123
+export SOURCE_DATE_EPOCH=1684609698
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
