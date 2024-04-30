@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : pypi-grpcio_reflection
-Version  : 1.62.2
-Release  : 57
-URL      : https://files.pythonhosted.org/packages/c3/c4/b1324700802631c72dcdff9cf6fd8eb50b0075a00c90fe6fdc4f87e1b927/grpcio-reflection-1.62.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/c3/c4/b1324700802631c72dcdff9cf6fd8eb50b0075a00c90fe6fdc4f87e1b927/grpcio-reflection-1.62.2.tar.gz
+Version  : 1.63.0
+Release  : 58
+URL      : https://files.pythonhosted.org/packages/37/fb/30e5419478a1ebe639331364dc873a4f9391a237be92f34c5b53326ccc8c/grpcio_reflection-1.63.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/37/fb/30e5419478a1ebe639331364dc873a4f9391a237be92f34c5b53326ccc8c/grpcio_reflection-1.63.0.tar.gz
 Summary  : Standard Protobuf Reflection Service for gRPC
 Group    : Development/Tools
 License  : Apache-2.0
@@ -58,10 +58,10 @@ python3 components for the pypi-grpcio_reflection package.
 
 
 %prep
-%setup -q -n grpcio-reflection-1.62.2
-cd %{_builddir}/grpcio-reflection-1.62.2
+%setup -q -n grpcio_reflection-1.63.0
+cd %{_builddir}/grpcio_reflection-1.63.0
 pushd ..
-cp -a grpcio-reflection-1.62.2 buildavx2
+cp -a grpcio_reflection-1.63.0 buildavx2
 popd
 
 %build
@@ -69,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713537765
+export SOURCE_DATE_EPOCH=1714498496
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -114,7 +114,7 @@ LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-grpcio_reflection
-cp %{_builddir}/grpcio-reflection-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-grpcio_reflection/242ec6abfdd8c114f2e803b84934469c299348fc || :
+cp %{_builddir}/grpcio_reflection-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-grpcio_reflection/242ec6abfdd8c114f2e803b84934469c299348fc || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
